@@ -8,15 +8,12 @@ Java Application:
 3. Execution Environment: Java applications have access to the entire Java Standard Edition (SE) API, which includes a wide range of libraries and classes for various functionalities such as file I/O, networking, database access, multithreading, and more.
 4. Deployment: Java applications are packaged into executable JAR (Java Archive) files or native executable files that can be distributed and executed on any machine with a compatible Java Runtime Environment (JRE) or Java Development Kit (JDK) installed.
 
+
 Java Applet:
 1. Execution: A Java applet is a small program designed to be embedded within a web page and executed by a web browser with Java plugin support. The applet is loaded and run by the browser when the corresponding web page is visited.
 2. User Interface: Java applets can have graphical user interfaces and interact with users similar to Java applications. The user interface is displayed within a designated area of the web page where the applet is embedded.
 3. Execution Environment: Java applets have limited access to the Java SE API. They run within a restricted environment called the "sandbox" to prevent malicious activities and have restricted access to the user's system resources.
 4. Deployment: Java applets are deployed by embedding the applet code and associated HTML tags within a web page. The web page is then hosted on a web server and accessed by users through a web browser with Java plugin support. However, Java applets have been deprecated since Java 9 and removed from Java SE starting from Java 11 due to security concerns and the decline of browser support for Java plugins.
-
-In summary, Java applications are standalone programs executed on a JVM, have full access to Java SE API, and can be deployed as executable JAR files. On the other hand, Java applets are small programs embedded within web pages, run within a browser's sandbox, have limited access to Java SE API, and have been deprecated in recent versions of Java.
-
-
 
 
 
@@ -50,7 +47,6 @@ The life cycle of a Java applet, which refers to the sequence of methods called 
 
 During the execution of an applet, these methods are called automatically by the applet container or web browser based on specific events or conditions. The sequence of method invocations may vary depending on user interactions, focus changes, or other external factors.
 
-It's important to note that Java applets have been deprecated and removed from Java SE starting from Java 11 due to security concerns and the decline of browser support for Java plugins. However, understanding the applet life cycle can provide insights into the general flow of execution for other Java graphical applications.
 
 
 
@@ -65,30 +61,38 @@ Q. Write difference between AWT and Swing in detail.
 AWT (Abstract Window Toolkit) and Swing are two Java GUI (Graphical User Interface) libraries that provide a set of classes and components for creating graphical interfaces in Java. Here are the key differences between AWT and Swing:
 
 1. Architecture:
+
    - AWT: AWT is the original GUI framework introduced in the early versions of Java. It uses native platform-specific code to render its components and relies on the underlying operating system's GUI components.
+
    - Swing: Swing is a more recent GUI framework built on top of AWT. It is implemented entirely in Java and provides a consistent look and feel across different platforms. Swing components are lightweight and have their own rendering engine, independent of the underlying operating system.
 
+
 2. Look and Feel:
+
    - AWT: AWT components have a native look and feel, meaning they inherit the appearance of the operating system's native GUI components. This can result in variations in the user interface across different platforms.
+
    - Swing: Swing components have a pluggable look and feel, allowing developers to customize the appearance of components. Swing provides several look and feel options, including the default cross-platform "Metal" look and feel, as well as platform-specific look and feel options like "Windows," "Motif," and "Nimbus."
 
 3. Component Set:
+
    - AWT: AWT provides a basic set of GUI components, including buttons, labels, text fields, checkboxes, and scrollbars. AWT components are heavyweight, meaning they directly correspond to a native operating system GUI component.
+
    - Swing: Swing provides an extensive set of GUI components, including advanced components like tables, trees, tabbed panes, and sliders. Swing components are lightweight, offering additional flexibility and customization options.
 
 4. Customizability:
+
    - AWT: AWT components have limited customization options. Developers can only modify certain properties of AWT components, such as color and size.
    - Swing: Swing components are highly customizable. Developers can customize various aspects of Swing components, such as appearance, behavior, and layout. Swing also provides support for pluggable UI delegates, allowing developers to create their own custom components.
 
 5. Performance:
+
    - AWT: AWT components, being heavyweight, rely on the underlying operating system's GUI components for rendering and event handling. This can result in better performance as the native components may be highly optimized.
    - Swing: Swing components, being lightweight, have their own rendering engine and event handling mechanisms. While Swing may introduce a slight performance overhead compared to AWT, it offers better consistency and portability across different platforms.
 
 6. Availability:
+
    - AWT: AWT is part of the core Java API and is available in all Java implementations.
    - Swing: Swing is also part of the core Java API and is available in all Java implementations. However, Swing requires an additional library (`javax.swing`) to be imported.
-
-Overall, Swing is considered more flexible, customizable, and consistent across different platforms compared to AWT. Swing's lightweight components, pluggable look and feel, and extensive component set have made it the preferred choice for GUI development in Java. However, AWT still has its uses, especially for simpler applications or when native integration and performance are critical considerations.
 
 
 
@@ -128,10 +132,6 @@ Component:
    - Components can be customized and extended by subclassing them or using their associated APIs.
 5. Purpose: Components provide the visual and interactive elements of the user interface, allowing users to interact with the application, display information, and trigger actions.
 
-In summary, containers provide structure and organization to the user interface, acting as parents for components and managing their layout and positioning. Components, on the other hand, represent the visual and interactive elements within the user interface, allowing users to interact with the application and display information. Containers and components work together to create a cohesive and functional graphical user interface in GUI programming.
-
-
-
 
 
 
@@ -146,55 +146,39 @@ In AWT (Abstract Window Toolkit), there are several components available that ca
 
 1. Button:
    - A simple button that can be clicked by the user to trigger an action.
-   - Class: `Button`
 
 2. Label:
    - A component used to display a single line of read-only text or an image.
-   - Class: `Label`
 
 3. TextField:
    - A component that allows users to input a single line of text.
-   - Class: `TextField`
 
 4. TextArea:
    - A multi-line text input area that allows users to input and view multiple lines of text.
-   - Class: `TextArea`
 
 5. Checkbox:
    - A component that represents a checkbox, allowing users to select or deselect an option.
-   - Class: `Checkbox`
 
 6. Choice:
    - A drop-down list or combo box that allows users to select one option from a list of choices.
-   - Class: `Choice`
 
 7. List:
    - A component that displays a scrollable list of items from which users can make multiple selections.
-   - Class: `List`
 
 8. Scrollbar:
    - A component that provides a scrollable slider for navigating through a range of values.
-   - Class: `Scrollbar`
 
 9. Panel:
    - A container component that is used to hold and organize other components.
-   - Class: `Panel`
 
 10. Canvas:
     - A blank component that can be used as a drawing surface for custom graphics or animation.
-    - Class: `Canvas`
 
 11. Menu and MenuItem:
     - Components used to create menus and menu items in a menu bar.
-    - Classes: `Menu`, `MenuItem`
-
+    
 12. Dialog:
     - A top-level window that displays a message or prompts the user for input.
-    - Class: `Dialog`
-
-These are just a few examples of components available in AWT. Each component has its own set of properties, methods, and events that can be utilized to create interactive user interfaces in Java using AWT.
-
-
 
 
 
@@ -221,43 +205,32 @@ The `MouseListener` interface in Java AWT provides a set of methods that allow y
 
 These methods are invoked automatically by the Java runtime when the corresponding mouse events occur on the registered component. To handle mouse events, you need to implement the `MouseListener` interface and override these methods with your custom code to define the desired behavior.
 
-For example, let's say you have a component named `myComponent` and you want to handle mouse events on it. You can implement the `MouseListener` interface and override its methods as follows:
 
-```java
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class MyMouseListener implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
-        // Handle the mouse click event
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // Handle the mouse press event
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // Handle the mouse release event
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        // Handle the mouse enter event
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        // Handle the mouse exit event
-    }
 }
 ```
-
-Then, you can register an instance of your `MyMouseListener` class to the `myComponent` component to start receiving mouse eventsmyComponent.addMouseListener(new MyMouseListener());
-
-
 
 
 
@@ -374,9 +347,7 @@ To execute SQL commands with JDBC (Java Database Connectivity), you need to foll
    - Close the `ResultSet`, `Statement`, and `Connection` objects in reverse order of creation.
    - Use the `close()` method to release the resources.
 
-Here's a basic example that demonstrates the execution of a simple SQL command using JDBC:
 
-```java
 import java.sql.*;
 
 public class JDBCSample {
@@ -421,14 +392,6 @@ public class JDBCSample {
         }
     }
 }
-```
-
-Make sure to replace the database URL, username, and password with your actual database credentials. Also, handle any exceptions that may occur during the execution of JDBC operations.
-
-
-
-
-
 
 
 
@@ -485,14 +448,7 @@ In Java's `Naming` class, the `bind()` and `rebind()` methods are used to bind o
 
 2. `rebind()`: The `rebind()` method binds or rebinds the specified object to the specified name in the naming service. If the name is already bound, it is replaced with the new object. If the name is not already bound, the object is bound to the name. Essentially, `rebind()` is used to update the binding of an existing name or create a new binding if the name is not already bound.
 
-To summarize:
 
-- `bind()` is used when you want to ensure that the name is not already bound before binding the object. It throws an exception if the name is already bound.
-- `rebind()` is used to bind or update the binding of an object to a specified name. It replaces the existing binding if the name is already bound.
-
-Here's an example to illustrate the difference:
-
-```java
 import java.rmi.*;
 import java.rmi.registry.*;
 
@@ -515,9 +471,6 @@ public class NamingExample {
         }
     }
 }
-```
-
-In the above example, `bind()` would throw a `NameAlreadyBoundException` if "myObject" is already bound, while `rebind()` would simply replace the existing binding if it exists or create a new binding if it doesn't.
 
 It's important to note that the `Naming` class is part of the Java RMI (Remote Method Invocation) API and is used to bind and retrieve remote objects from the naming service.
 
