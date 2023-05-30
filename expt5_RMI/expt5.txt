@@ -1,0 +1,13 @@
+cd and copy path
+
+cd src
+> javac *.java
+> start rmiregistry
+> java rmiserver
+
+and then
+
+cd copy path
+cd src
+java rmiclient
+
